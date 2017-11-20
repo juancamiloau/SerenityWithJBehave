@@ -8,10 +8,11 @@ import net.thucydides.core.annotations.DefaultUrl;
 @DefaultUrl("http://www.exito.com")
 public class PortalExitoPage extends PageObject{
 	@FindBy(xpath = "//input[@name='Ntt']")
-	private WebElementFacade txtBuscadorPrincipal;
+	private WebElementFacade txtBarraPrincipal;
 	
 	public void EscribirEnLaBarraDeBusqueda(String strPalabra) {
-		txtBuscadorPrincipal.typeAndEnter(strPalabra);
+		waitFor(2).seconds();
+		txtBarraPrincipal.typeAndEnter(strPalabra);
 	}
 	
 	public boolean VerificarResultadosRelacionados (String strPalabra) {
